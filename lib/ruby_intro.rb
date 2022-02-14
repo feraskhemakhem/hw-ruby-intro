@@ -34,15 +34,20 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  return "Hello, " + name
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  # if string is empty, return false
+  # otherwise, extract first letter (lowercase), verify letter, and check if in list of vowels
+  !s.empty? && s[0] =~ /[a-zA-Z]/ and s[0].downcase =~ /[^aeiou]/
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  # if valid binary number and last 2 numbers are 0, then it passes
+  # also has to be long enough ig (if 0 length invalid, if 1 letter then must be zero)
+  # if 1 letter and zero,      , or 2+ letters      and no non-(0-1) number and last 2 letters are 0
+  (s.length() == 1 and s == "0") or (s.length() > 1 and !s.match(/[^0-1]/) and s[-2...] == "00")
 end
 
 # Part 3
