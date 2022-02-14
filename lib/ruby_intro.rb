@@ -53,5 +53,40 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  # constructor
+  def initialize _isbn, _price
+    # check for valid inputs
+    raise ArgumentError.new "invalid argument" if _isbn.empty? or _price <= 0
+    
+    # set parameters to class members
+    @isbn = _isbn
+    @price = _price
+    
+  end
+  
+  # isbn instance method (getter)
+  def isbn
+    @isbn
+  end
+  
+  # setter function
+  def isbn=(new_isbn)
+    @isbn = new_isbn
+  end
+  
+  # isbn instance method (getter)
+  def price
+    @price
+  end
+  
+  # setter function
+  def price=(new_price)
+    @price = new_price
+  end
+  
+  # part 3
+  def price_as_string
+    # returns price in string format with $ and 2 decimals
+    return "$%0.2f" % [@price]
+  end
 end
